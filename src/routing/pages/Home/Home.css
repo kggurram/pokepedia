@@ -1,0 +1,31 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+.type-search {
+    width: 100%;
+    text-align: center;
+}
+
+.type-text {
+    font-size: 4vw;
+    margin-top: 8vh;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10vh;
+}
+
+.input-group {
+
+    padding-top: 5vh;
+    margin: auto;
+    max-width: 20%;
+    text-align: center;
+}
+
+* {
+    border: 0;
+}
