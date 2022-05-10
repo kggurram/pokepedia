@@ -1,13 +1,24 @@
-import types from "./types.json";
+const axios = require("axios");
 
-export function getTypes() {
-  let typesOfMons = types.results;
+// FORMAT
+// async function makeGetRequest() {
 
-  for (let i = 0; i < types.results.length; i++) {
+//   let res = await axios.get('http://webcode.me');
+
+//   let data = res.data;
+//   console.log(data);
+// }
+
+export async function getTypes() {
+  let res = await axios.get("https://pokeapi.co/api/v2/type");
+  let typesOfMons = res.data.results;
+  typesOfMons.pop();
+  typesOfMons.pop();
+  for (let i = 0; i < res.data.results.length; i++) {
     typesOfMons[i].image = require(`./typeIcons/${lowerFirst(
       typesOfMons[i].name
     )}.png`);
-    typesOfMons[i].name = capFirst(types.results[i].name);
+    typesOfMons[i].name = capFirst(res.data.results[i].name);
     typesOfMons[i].key = i;
   }
   return typesOfMons;
