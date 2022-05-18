@@ -11,8 +11,8 @@ const List = () => {
 
   useEffect(() => {
     onLoad();
-    console.log(monList);
-  }, []);
+    // console.log(monList);
+  });
 
   async function onLoad() {
     setMonList(await monListByType(typeKey));
@@ -21,9 +21,9 @@ const List = () => {
   return (
     <div className="text-white italic bg-slate-900 min-h-screen pl-40 py-20">
       <div className="text-5xl font-bold">{typeName} Pokémon:</div>
-      {monList.map((mons) =>{
+      {/* {monList.map((mons) =>{
         return <div>{monList[mons].pokemon.name}</div>;
-      })}
+      })} */}
     </div>
   );
 };
