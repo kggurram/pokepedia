@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  font-family: 'Fredoka One', cursive;
-  color: rgb(196, 196, 196);
-  background-color: #383838;
+div {
+  /* @apply border border-rose-300; */
 }

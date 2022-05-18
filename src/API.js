@@ -24,10 +24,36 @@ export async function getTypes() {
   return typesOfMons;
 }
 
+export async function getTypeList() {
+  let res = await axios.get();
+}
+
 export function capFirst(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 export function lowerFirst(string) {
   return string.charAt(0).toLowerCase() + string.slice(1);
+}
+
+let typeKey = 0;
+let typeName = "";
+
+export function setType(int, string) {
+  typeKey = int;
+  typeName = string;
+}
+
+export function getTypeKey() {
+  return typeKey;
+}
+
+export function getTypeName() {
+  return typeName;
+}
+
+export async function monListByType(int){
+  let res = await axios.get("https://pokeapi.co/api/v2/type/" + `${int+1}`);
+  let list = res.data.pokemon;
+  console.log(list[0].pokemon.name);
 }

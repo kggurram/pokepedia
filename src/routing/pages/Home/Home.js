@@ -21,6 +21,8 @@ function Home() {
     setSearch(e.target.value);
   };
 
+  // console.log(types);
+
   const handleClick = (e) => {
     console.log(e);
   };
@@ -29,25 +31,19 @@ function Home() {
     types.name.toLowerCase().includes(search.toLowerCase())
   );
 
- 
-
   return (
-    <div className="Home">
-      <div className="type-search">
-        <h1 className="type-text">Search a Pokémon</h1>
-        <div className="input-group rounded">
-          <input
-            type="search"
-            className="form-control form-control-lg rounded"
-            placeholder="Search through type..."
-            onChange={handleChange}
-          />
-          <span className="input-group-text border-0" id="search-addon">
-            <i className="fas fa-search"></i>
-          </span>
-        </div>
+    <div className="text-white italic bg-slate-900 min-h-screen">
+      <h1 className="text-center text-5xl pt-16 font-bold">Search a Pokémon</h1>
+      <div className="max-w-md my-5 mx-auto">
+        <input
+          type="search"
+          className="form-control form-control-lg rounded"
+          placeholder="Search through type..."
+          onChange={handleChange}
+        />
       </div>
-      <div className="grid-container">
+
+      <div className="grid xl:grid-cols-3 md:grid-cols-2 place-items-center">
         {filteredTypes.map((types) => {
           return <Type key={types.key} types={types} onClick={handleClick} />;
         })}
